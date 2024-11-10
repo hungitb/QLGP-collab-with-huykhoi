@@ -7,7 +7,7 @@ function API() {
         if (DEBUG) {
             console.log('Input', path, data)
         }
-        return fetch(BASE_API_URL + path + ((method == 'GET' && Object.keys(data) != 0) ? '?' + Object.keys(data).map(k => `${k}=${data[k]}`).join('&') : ''), {
+        return fetch(BASE_API_URL + path + ((method == 'GET' && Object.keys(data).length != 0) ? '?' + Object.keys(data).map(k => `${k}=${data[k]}`).join('&') : ''), {
             method: method,
             headers: {
                 'Content-Type': 'application/json'

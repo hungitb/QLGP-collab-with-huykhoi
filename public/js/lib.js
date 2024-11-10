@@ -288,9 +288,9 @@ let DateLib = (() => {
         isSuiForm: s => {
             if (!s || !s.split) return false
             let abc = s.split('/')
-            if (!abc.length == 3) return false
+            if (!(abc.length == 3)) return false
             let allInts = abc.every(n => {
-                if (isNaN(n) || isNaN(parseFloat(n))) return false
+                if (isNaN(parseInt(n)) || isNaN(parseFloat(n))) return false
                 n = parseFloat(s)
                 if (n == Math.round(n) && n > 0) return true
                 return false
